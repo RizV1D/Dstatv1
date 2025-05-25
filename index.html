@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nginx-like Monitor</title>
+</head>
+<body>
+    <h1>VPS Request Count</h1>
+    <pre id="status">Loading...</pre>
+
+    <script>
+    fetch('https://139.59.232.177/VaiwBDakaqoba')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('status').textContent = data;
+        })
+        .catch(error => {
+            document.getElementById('status').textContent = 'Error fetching status';
+            console.error(error);
+        });
+    </script>
+</body>
+</html>
